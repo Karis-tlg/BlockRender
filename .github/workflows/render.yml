@@ -1,0 +1,27 @@
+name: Render Block
+on: 
+  workflow_dispatch:
+    inputs:
+      textures_url:
+        type: string
+        required: true
+      
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    env:
+      TEXTURES: ${{ inputs.textures_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Run
+        run: |
+          mkdir input
+          wget -O textures.zip $TEXTURES
+          unzip textures.zip -d input/
+          bash render.sh input/ output/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Icon
+          path: output/
