@@ -7,10 +7,10 @@ This action generates isometric block icons for Minecraft using textures from a 
 - Bash (Linux, macOS, or Windows WSL)  
 
 # Usage:
- 1. Go to the "Actions" tab in your GitHub repository.
- 2. Select "Render Block" from the list of workflows.
- 3. Click "Run workflow" and enter the URL to the textures zip file.
- 4. The generated icons will be available as an artifact named "Icon".
+1. Go to the "Actions" tab in your GitHub repository.
+2. Select "Render Block" from the list of workflows.
+3. Click "Run workflow" and enter the URL to the textures zip file.
+4. The generated icons will be available as an artifact named "Icon".
 
 ## Usage  
 Run the script with:  
